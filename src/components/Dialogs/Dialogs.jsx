@@ -24,12 +24,10 @@ const Dialogs = () => {
         
         <div className={style.dialogs}>
             <div className={style.dialogsItem}>
-                <Router>
-                    <Route path="/dialogs/1" element={<Dialog name='Dima' id='1' />} />
-                    <Route path="/dialogs/2" element={<Dialog name='Slavik' id='2' />} />
-                    <Route path="/dialogs/3" element={<Dialog name='Anastasiia' id='3' />} />
-                    <Route path="/dialogs/4" element={<Dialog name='Valeriii' id='4' />} />            
-                </Router>
+                    <Dialog name='Dima' id='1' />
+                    <Dialog name='Slavik' id='2' />
+                    <Dialog name='Anastasiia' id='3' />
+                    <Dialog name='Valeriii' id='4' />        
             </div>
            <div className={style.messages}>
                <Message message='Hi' />
