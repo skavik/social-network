@@ -4,7 +4,7 @@ import style from  './Post.module.css'
 const Post = (props) => {
     return (
       <div>
-        <img src=""  />
+        <img src={props.ava} className={style.ava} />
         {props.message}
         <div>
           <span>like</span> {props.like}
