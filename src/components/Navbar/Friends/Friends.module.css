@@ -1,0 +1,14 @@
+.friends h5 {
+  margin-top: 75px;
+  text-align: center;
+  color: #3498db;
+  font-size: 35px;
+}
+
+.friendsBox {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 5px;
+}
+
