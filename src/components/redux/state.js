@@ -18,7 +18,9 @@ let state = {
       { id: 1, ava: "https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg?q=60", 
       post: "My first post", likeCount: 15 },
       { id: 2, ava: "https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg?q=60", 
-      post: "Hy, how are you", likeCount: 6 },
+      post: "Hi, how are you", likeCount: 6 },
+      { id: 3, ava: "https://cdn.britannica.com/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg?q=60", 
+      post: "Hi, I'm good", likeCount: 3 },
     ],
   },
 

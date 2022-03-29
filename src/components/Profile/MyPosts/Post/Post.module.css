@@ -1,5 +1,31 @@
+.postBox {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+}
+
 .ava {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+}
+
+.post span {
+  margin-left: 25px;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+}
+
+.like img {
+  width: 20px;
+  margin-right: 10px;
 }

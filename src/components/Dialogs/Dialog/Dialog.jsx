@@ -10,5 +10,4 @@ const Dialog = (props) => {
   );
 };
 
-
 export default Dialog;

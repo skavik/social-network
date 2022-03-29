@@ -1,18 +1,20 @@
-import React from 'react';
-import style from  './Post.module.css'
+import React from "react";
+import style from "./Post.module.css";
 
 const Post = (props) => {
-    return (
-      <div className={style.postsBox}>
-        <div className={style.posts}>
+  return (
+    <div className={style.postBox}>
+      <div className={style.post}>
         <img src={props.ava} className={style.ava} />
-        {props.message}
-        </div>
-        <div className={style.like}>
-          <span>like</span> {props.like}
-        </div>
+        <span>{props.message}</span>
       </div>
-    )
+      <div className={style.like}>
+        
+        <img src="https://clipart-best.com/img/like/like-clip-art-76.png"  /> 
+        {props.like}
+      </div>
+    </div>
+  );
 };
 
 export default Post;
