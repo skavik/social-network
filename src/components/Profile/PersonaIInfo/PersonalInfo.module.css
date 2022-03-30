@@ -9,6 +9,23 @@
 }
 
 .PersonalDescripytiom img {
-  width: 100px;
+  width: 250px;
   height: auto;
+}
+
+.PersonalInfo {
+  margin-left: 25px;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.info p {
+  margin-top: 3px;
 }

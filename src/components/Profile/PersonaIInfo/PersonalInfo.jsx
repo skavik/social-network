@@ -10,8 +10,8 @@ const PersonalInfo = () => {
         <div className={style.PersonalDescripytiom}>
          <img src="https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg" />
           <div className={style.PersonalInfo}>
-            <p>Slavik Sluska</p>
-            <div>
+            <p className={style.name}> Slavik Sluvka</p>
+            <div className={style.info}>
               <p>Data of Birht: 6 October</p>
               <p>City: Chernivtsi</p>
               <p>Educatoin: LNu' 19</p>
