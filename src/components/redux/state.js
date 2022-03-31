@@ -34,6 +34,18 @@ let state = {
   }
 };
 
+export let addPost = (postMessage) => {
+  debugger;
+  let newPost = {
+    id: 5,
+    ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg",
+    post: postMessage,
+    likeCount: 0 
+  }
+
+  state.profilePage.postsData.push(newPost)
+}
+
 export default state;
 
 // http://themekit.frontendmatter.com/dist/themes/admin/index.html
