@@ -1,3 +1,5 @@
+import { renderReactTree } from "../../render";
+
 let state = {
   dialogsPage: {
     messagesData: [
@@ -22,6 +24,8 @@ let state = {
       { id: 3, ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg", 
       post: "Hi, I'm good", likeCount: 3 },
     ],
+    newPostText: 'Enter text',
+
   },
 
   navbar: {
@@ -34,16 +38,25 @@ let state = {
   }
 };
 
+
+
 export let addPost = (postMessage) => {
-  debugger;
-  let newPost = {
+   let newPost = {
     id: 5,
     ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg",
     post: postMessage,
     likeCount: 0 
   }
 
-  state.profilePage.postsData.push(newPost)
+  state.profilePage.postsData.push(newPost);
+  renderReactTree(state);
+  state.profilePage.newPostText = '';
+
+}
+
+export let updateNewTextPost = (newText) => {
+  state.profilePage.newPostText = newText;
+  renderReactTree(state);
 }
 
 export default state;
