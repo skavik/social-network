@@ -1,4 +1,5 @@
 
+
 let store = {
   _state: {
     dialogsPage: {
@@ -81,12 +82,15 @@ let store = {
   updateNewTextPost (newText) {
     this._state.profilePage.newPostText = newText;
     this.renderReactTree();
+
+
   },
 
   updateNewTextPost (newText) {
     this._state.profilePage.newPostText = newText;
     this.renderReactTree();
   },
+
   updateNewMessageText (newText) {
     this._state.dialogsPage.newMessageText = newText;
     this.renderReactTree();
@@ -103,6 +107,7 @@ let store = {
   renderReactTree () {},
 
 }
+
 
 
 
