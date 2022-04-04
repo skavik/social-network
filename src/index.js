@@ -1,11 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import {renderReactTree} from './render';
-import state from './components/redux/state';
+import state, { observer, addPost, updateNewTextPost, sendMessage, updateNewTextMessage } from './components/redux/state';
+import './index.css';
+import App from './App';
 
 
-renderReactTree(state);
+
+export let renderReactTree = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App 
+      state={state} 
+      addPost={addPost} 
+      updateNewTextPost={updateNewTextPost}
+      sendMessage = {sendMessage}
+      updateNewTextMessage = {updateNewTextMessage} />
+    </React.StrictMode>,
+  document.getElementById('root')
+);
+};
+
+renderReactTree();
+observer(renderReactTree)
 
 
 

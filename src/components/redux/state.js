@@ -1,4 +1,4 @@
-import { renderReactTree } from "../../render";
+let renderReactTree = () => {};
 
 let state = {
   dialogsPage: {
@@ -7,6 +7,7 @@ let state = {
       { id: 2, message: "Hi what happens" },
       { id: 3, message: "everything cool" },
     ],
+    newMessageText: 'Enter message',
     dialogsData: [
       { id: 1, name: "Dima" },
       { id: 2, name: "Slavik" },
@@ -49,14 +50,30 @@ export let addPost = (postMessage) => {
   }
 
   state.profilePage.postsData.push(newPost);
-  renderReactTree(state);
+  renderReactTree();
   state.profilePage.newPostText = '';
 
 }
 
 export let updateNewTextPost = (newText) => {
   state.profilePage.newPostText = newText;
-  renderReactTree(state);
+  renderReactTree();
+}
+
+export let sendMessage = (newMessageText) => {
+  let newMessage = { id: 3, message: newMessageText }
+  state.dialogsPage.messagesData.push(newMessage)
+  state.dialogsPage.newMessageText = '';
+  renderReactTree();
+};
+
+export let updateNewTextMessage = (newText) => {
+  state.dialogsPage.newMessageText = newText;
+  renderReactTree();
+}
+
+export let observer = (el) => {
+  renderReactTree = el;
 }
 
 export default state;
