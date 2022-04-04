@@ -77,7 +77,7 @@ let store = {
   
     this._state.profilePage.postsData.push(newPost);
     this.renderReactTree();
-    this.state.profilePage.newPostText = "";
+    this._state.profilePage.newPostText = "";
   },
   updateNewTextPost (newText) {
     this._state.profilePage.newPostText = newText;
