@@ -11,10 +11,7 @@ let renderReactTree = () => {
     <React.StrictMode>
       <App
         state={store.getStore()}
-        addPost={store.addPost.bind(store)}
-        updateNewTextPost={store.updateNewTextPost.bind(store)}
-        updateNewMessageText={store.updateNewMessageText.bind(store)}
-        sendMessage={store.sendMessage.bind(store)}
+        dispatch={store.dispatch.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById("root")

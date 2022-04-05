@@ -17,13 +17,12 @@ const Dialogs = (props) => {
 
   let sendMessage = () => {
     let text = newMessageElement.current.value;
-
-    props.sendMessage(text);
+    props.dispatch({type: 'SEND-MESSAGE'});
   };
 
   let newMessageText = () => {
     let text = newMessageElement.current.value;
-    props.updateNewMessageText(text);
+    props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
   };
 
 

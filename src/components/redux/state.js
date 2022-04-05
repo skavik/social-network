@@ -1,5 +1,3 @@
-
-
 let store = {
   _state: {
     dialogsPage: {
@@ -16,7 +14,7 @@ let store = {
         { id: 4, name: "Valerii" },
       ],
     },
-  
+
     profilePage: {
       postsData: [
         {
@@ -40,7 +38,7 @@ let store = {
       ],
       newPostText: "Enter text",
     },
-  
+
     navbar: {
       friendsBox: [
         {
@@ -64,52 +62,40 @@ let store = {
       ],
     },
   },
-  getStore () {
-    return this._state
+  getStore() {
+    return this._state;
   },
-  addPost (postMessage) {
-    let newPost = {
-      id: 5,
-      ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg",
-      post: postMessage,
-      likeCount: 0,
-    };
-  
-    this._state.profilePage.postsData.push(newPost);
-    this.renderReactTree();
-    this._state.profilePage.newPostText = "";
-  },
-  updateNewTextPost (newText) {
-    this._state.profilePage.newPostText = newText;
-    this.renderReactTree();
-
-
-  },
-
-  updateNewTextPost (newText) {
-    this._state.profilePage.newPostText = newText;
-    this.renderReactTree();
-  },
-
-  updateNewMessageText (newText) {
-    this._state.dialogsPage.newMessageText = newText;
-    this.renderReactTree();
-  },
-  sendMessage (newMessage) {
-    let Message = { id: 1, message: newMessage };
-    this._state.dialogsPage.messagesData.push(Message);
-    this._state.dialogsPage.newMessageText = "";
-    this.renderReactTree();
-  },
-  observer (el) {
+  observer(el) {
     this.renderReactTree = el;
   },
-  renderReactTree () {},
+  renderReactTree() {},
 
-}
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 5,
+        ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg",
+        post: this._state.profilePage.newPostText,
+        likeCount: 0,
+      };
 
-
-
+      this._state.profilePage.postsData.push(newPost);
+      this.renderReactTree();
+      this._state.profilePage.newPostText = "";
+    } else if (action.type === "UPDATE-NEW-TEXT-POST") {
+      this._state.profilePage.newPostText = action.newText;
+      this.renderReactTree();
+    } else if (action.type === "SEND-MESSAGE") {
+      let Message = { id: 1, message: this._state.dialogsPage.newMessageText };
+      this._state.dialogsPage.messagesData.push(Message);
+      this._state.dialogsPage.newMessageText = "";
+      this.renderReactTree();
+    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
+      this._state.dialogsPage.newMessageText = action.newText;
+      this.renderReactTree();
+    }
+  },
+};
 
 export default store;
 
