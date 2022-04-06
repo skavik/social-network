@@ -97,6 +97,14 @@ let store = {
   },
 };
 
+export let addPostActionCreator = () => ({type: 'ADD-POST'})
+ 
+export let updateNewTextPostActionCreator = (text) => ({
+     type: 'UPDATE-NEW-TEXT-POST',
+     newText: text
+   })
+ 
+
 export default store;
 
 // http://themekit.frontendmatter.com/dist/themes/admin/index.html
