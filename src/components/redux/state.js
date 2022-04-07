@@ -6,7 +6,7 @@ let store = {
         { id: 2, message: "Hi what happens" },
         { id: 3, message: "everything cool" },
       ],
-      newMessageText: "Enter message text",
+      newMessageText: "",
       dialogsData: [
         { id: 1, name: "Dima" },
         { id: 2, name: "Slavik" },
@@ -36,7 +36,7 @@ let store = {
           likeCount: 3,
         },
       ],
-      newPostText: "Enter text",
+      newPostText: "",
     },
 
     navbar: {
