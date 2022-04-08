@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, NavLink, Route, Router } from "react-router-dom";
+import { sentMessageActionCreator, updateNewMessageTextActionCreator } from "../redux/dialogs-reducer";
 import Dialog from "./Dialog/Dialog";
 import style from "./Dialogs.module.css";
 import Message from "./Message/Message";
@@ -14,12 +14,12 @@ const Dialogs = (props) => {
   ));
 
   let sendMessage = () => {
-    props.dispatch({ type: "SEND-MESSAGE" });
+    props.dispatch(sentMessageActionCreator());
   };
 
   let newMessageText = (e) => {
     let text = e.target.value;
-    props.dispatch({ type: "UPDATE-NEW-MESSAGE-TEXT", newText: text });
+    props.dispatch(updateNewMessageTextActionCreator(text));
   };
 
   return (

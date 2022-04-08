@@ -1,3 +1,7 @@
+import dialogsReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
+import profileReducer from "./profile-reducer";
+
 let store = {
   _state: {
     dialogsPage: {
@@ -71,38 +75,18 @@ let store = {
   renderReactTree() {},
 
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newPost = {
-        id: 5,
-        ava: "https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTg0NTEzNzgyNTMyNDE2OTk5/black-cat-gettyimages-901574784.jpg",
-        post: this._state.profilePage.newPostText,
-        likeCount: 0,
-      };
 
-      this._state.profilePage.postsData.push(newPost);
-      this.renderReactTree();
-      this._state.profilePage.newPostText = "";
-    } else if (action.type === "UPDATE-NEW-TEXT-POST") {
-      this._state.profilePage.newPostText = action.newText;
-      this.renderReactTree();
-    } else if (action.type === "SEND-MESSAGE") {
-      let Message = { id: 1, message: this._state.dialogsPage.newMessageText };
-      this._state.dialogsPage.messagesData.push(Message);
-      this._state.dialogsPage.newMessageText = "";
-      this.renderReactTree();
-    } else if (action.type === "UPDATE-NEW-MESSAGE-TEXT") {
-      this._state.dialogsPage.newMessageText = action.newText;
-      this.renderReactTree();
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer( this._state.dialogsPage, action);
+    this._state.navbar = navbarReducer(this._state.navbar, action);
+    this.renderReactTree();
+   
   },
 };
 
-export let addPostActionCreator = () => ({type: 'ADD-POST'})
+
  
-export let updateNewTextPostActionCreator = (text) => ({
-     type: 'UPDATE-NEW-TEXT-POST',
-     newText: text
-   })
+
  
 
 export default store;
