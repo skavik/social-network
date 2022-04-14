@@ -15,14 +15,14 @@ const MyPosts = (props) => {
     let text = e.target.value;
     props.ChangePost(text);
   };
- 
+
   return (
     <div className={style.postsBlock}>
       <h3>MyPosts</h3>
       <div className={style.addPost}>
         <textarea
           placeholder="Enter text post"
-          value={props .newPostText}
+          value={props.newPostText}
           onChange={onChangePost}
         ></textarea>
         <button onClick={onAddPost}>Add post</button>
