@@ -33,9 +33,9 @@ const dialogsReducer = (state = initialState, action) => {
     
 }
 
-export const sentMessageActionCreator = () => ({type: "SEND-MESSAGE"})
-export const updateNewMessageTextActionCreator = (text) => ({
-    type: "UPDATE-NEW-MESSAGE-TEXT", 
+export const sentMessageActionCreator = () => ({type: SEND_MESSAGE})
+export let updateNewMessageTextActionCreator = (text) => ({
+    type: UPDATE_NEW_MESSAGE_TEXT, 
     newText: text
   })
 

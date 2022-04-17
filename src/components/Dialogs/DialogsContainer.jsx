@@ -4,6 +4,7 @@ import {
   sentMessageActionCreator,
   updateNewMessageTextActionCreator,
 } from "../redux/dialogs-reducer";
+
 import Dialogs from "./Dialogs";
 
 let mapStateToProps = (state) => {
