@@ -6,7 +6,7 @@ import style from "./Profile.module.css";
 const Profile = (props) => (
   <div>
     <PersonalInfo />
-    <MyPostsContainer  />
+    <MyPostsContainer />
   </div>
 );
 
