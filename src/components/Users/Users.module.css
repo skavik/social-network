@@ -1,9 +1,73 @@
-.photoUser {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.pagination {
+  margin: 10px;
+  font-size: 17px;
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pagination span {
+  margin-right: 5px;
 }
 
 .selectedPage {
   font-weight: bold;
+  color: #3498db;
+}
+
+.userBox {
+  margin: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__photoBox {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.photoUser {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.user__photoBox button {
+  height: 30px;
+  width: 100px;
+  background-color: #3498db;
+  border-color: #3498db;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.user__infoBox {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.user__infoBox p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.user__infoBox__name {
+  margin-left: 15px;
+}
+
+.user__infoBox__name p:nth-child(2) {
+  font-size: 12px;
+  color: #6e7882;
+}
+
+.user__infoBox__location {
+  margin-right: 15px;
 }
