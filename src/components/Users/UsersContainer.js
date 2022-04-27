@@ -5,6 +5,7 @@ import {
   setCurrentPageAC,
   setTotalUsersCountAC,
   setUsersAC,
+  toggleIsFetchingAC,
   unfollowAC,
 } from "../redux/users-reducer";
 import UsersAPIComponent from "./UsersAPIComponent";
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
+    isFetching: state.usersPage.isFetching,
   };
 };
 
@@ -34,6 +36,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setTotalUsersCount: (totalCount) => {
       dispatch(setTotalUsersCountAC(totalCount));
+    },
+    toggleIsFetching: (isFetching) => {
+      dispatch(toggleIsFetchingAC(isFetching));
     },
   };
 };
