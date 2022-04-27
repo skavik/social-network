@@ -1,14 +1,14 @@
-import React from 'react';
-import style from './Header.module.css';
-
+import React from "react";
+import style from "./Header.module.css";
+import logo from "../../assets/img/logo.png";
 
 const Header = () => {
-    return (
-        <header className={style.header}>
-        <img src='https://play.google.com/store/apps/details?id=io.hexman.xiconchanger&hl=ru&gl=US' />
-        <p>SOCIAL NETWORK</p>      
-      </header>
-    )
+  return (
+    <header className={style.header}>
+      <img src={logo} />
+      <p>SOCIAL NETWORK</p>
+    </header>
+  );
 };
 
 export default Header;

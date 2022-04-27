@@ -1,7 +1,8 @@
 import * as axios from "axios";
 import React from "react";
 import Users from "./Users";
-import loaging from "../../assets/img/loading.svg";
+
+import Proloader from "../common/Proloader/Proloader";
 
 class UsersAPIComponent extends React.Component {
   componentDidMount() {
@@ -33,7 +34,7 @@ class UsersAPIComponent extends React.Component {
   render() {
     return (
       <>
-        {this.props.isFetching ? <img src={loaging} /> : null}
+        {this.props.isFetching ? <Proloader /> : null}
         <Users
           totalUsersCount={this.props.totalUsersCount}
           pageSize={this.props.pageSize}
