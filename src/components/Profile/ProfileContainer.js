@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { setUserProfile } from "../redux/profile-reducer";
 import Profile from "./Profile";
+import { useHistory } from "react-router-dom";
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
@@ -22,4 +23,5 @@ let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
 });
 
+let history = useHistory();
 export default connect(mapStateToProps, { setUserProfile })(ProfileContainer);

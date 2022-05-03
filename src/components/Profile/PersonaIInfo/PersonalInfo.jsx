@@ -1,6 +1,15 @@
 import React from "react";
 import Proloader from "../../common/Proloader/Proloader";
 import style from "./PersonalInfo.module.css";
+import lookingJob from "../../../assets/img/lookingJob.png";
+import noLookingJob from "../../../assets/img/noLookingJob.png";
+import facebook from "../../../assets/img/facebook.png";
+import website from "../../../assets/img/website.png";
+import github from "../../../assets/img/github.png";
+import insta from "../../../assets/img/insta.png";
+import twitter from "../../../assets/img/twitter.png";
+import vk from "../../../assets/img/vk.png";
+import youtube from "../../../assets/img/youtube.png";
 
 const PersonalInfo = (props) => {
   if (!props.profile) {
@@ -10,17 +19,59 @@ const PersonalInfo = (props) => {
   return (
     <div>
       <div className={style.mainImg}>
-        <img src="https://q-xx.bstatic.com/xdata/images/hotel/840x460/78809294.jpg?k=cf850d507a9671cf7ff85d598435ea329a28cd4f1b1abc25c1892c91156d36ad&o=" />
+        <img src={props.profile.photos.large} />
       </div>
       <div className={style.PersonalDescripytiom}>
         <img src={props.profile.photos.small} />
         <div className={style.PersonalInfo}>
           <p className={style.name}>{props.profile.fullName}</p>
           <div className={style.info}>
-            <p>Data of Birht: 6 October</p>
-            <p>City: Chernivtsi</p>
-            <p>Educatoin: LNu' 19</p>
-            <p>Web site: https://github.com/skavik</p>
+            <p>{props.profile.aboutMe}</p>
+            <p className={style.boxJob}>
+              {props.profile.lookingForAJob ? (
+                <img src={lookingJob} />
+              ) : (
+                <img src={noLookingJob} />
+              )}
+              <span>{props.profile.lookingForAJobDescription}</span>
+            </p>
+            <p className={style.network}>
+              {props.profile.contacts.facebook ? (
+                <a href={props.profile.contacts.facebook} title="facebook">
+                  <img src={facebook} />
+                </a>
+              ) : null}
+              {props.profile.contacts.website ? (
+                <a href={props.profile.contacts.website} title="website">
+                  <img src={website} />
+                </a>
+              ) : null}
+              {props.profile.contacts.vk ? (
+                <a href={props.profile.contacts.vk} title="vk">
+                  <img src={vk} />
+                </a>
+              ) : null}
+              {props.profile.contacts.twitter ? (
+                <a href={props.profile.contacts.twitter} title="twitter">
+                  <img src={twitter} />
+                </a>
+              ) : null}
+              {props.profile.contacts.instagram ? (
+                <a href={props.profile.contacts.instagram} title="instagram">
+                  <img src={insta} />
+                </a>
+              ) : null}
+              {props.profile.contacts.youtube ? (
+                <a href={props.profile.contacts.youtube} title="youtube">
+                  <img src={youtube} />
+                </a>
+              ) : null}
+              {props.profile.contacts.github ? (
+                <a href={props.profile.contacts.github} title="github">
+                  <img src={github} />
+                </a>
+              ) : null}
+            </p>
           </div>
         </div>
       </div>
