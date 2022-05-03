@@ -10,6 +10,7 @@ import insta from "../../../assets/img/insta.png";
 import twitter from "../../../assets/img/twitter.png";
 import vk from "../../../assets/img/vk.png";
 import youtube from "../../../assets/img/youtube.png";
+import user from "../../../assets/img/user.png";
 
 const PersonalInfo = (props) => {
   if (!props.profile) {
@@ -22,7 +23,7 @@ const PersonalInfo = (props) => {
         <img src={props.profile.photos.large} />
       </div>
       <div className={style.PersonalDescripytiom}>
-        <img src={props.profile.photos.small} />
+        <img src={props.profile.photos.small || user} />
         <div className={style.PersonalInfo}>
           <p className={style.name}>{props.profile.fullName}</p>
           <div className={style.info}>
