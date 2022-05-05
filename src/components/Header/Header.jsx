@@ -11,7 +11,7 @@ const Header = (props) => {
         <p>SOCIAL NETWORK</p>
       </div>
       <div className={style.login}>
-        <NavLink to="/login">Login</NavLink>
+        {props.isUnth ? props.login : <NavLink to="/login">Login</NavLink>}
       </div>
     </header>
   );

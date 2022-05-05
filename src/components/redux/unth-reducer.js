@@ -4,6 +4,7 @@ let initialState = {
   id: null,
   email: null,
   login: null,
+  isUnth: false,
 };
 
 const unthReducer = (state = initialState, action) => {
@@ -12,6 +13,7 @@ const unthReducer = (state = initialState, action) => {
       return {
         ...state,
         ...action.data,
+        isUnth: true,
       };
     default:
       return state;
