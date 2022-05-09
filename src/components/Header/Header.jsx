@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Header = (props) => {
   return (
     <header className={style.header}>
-      <div>
+      <div className={style.title}>
         <img src={logo} />
         <p>SOCIAL NETWORK</p>
       </div>

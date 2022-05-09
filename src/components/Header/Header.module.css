@@ -3,7 +3,14 @@
   background-color: #3498db;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
 .header img {
   width: 45px;
   margin-left: 10px;
@@ -16,6 +23,11 @@
   margin-left: 20px;
 }
 
+.login {
+  margin-right: 10px;
+}
+
 .login a {
-  float: right;
+  text-decoration: none;
+  color: #fff;
 }
