@@ -39,30 +39,35 @@ const Users = (props) => {
               />
             </NavLink>
             {u.followed ? (
-              <button
+              <button disabled={props.followingInProgrese}
                 onClick={() => {
+                  props.toggleFollowingIsProgrese(true);
+
                   axios
                     .delete(
                       `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
                       {
                         withCredentials: true,
                         headers: {
-                          "API-KEY": "",
+                          "API-KEY": "72a4f2e7-5e65-43a1-a356-1ce43d7c4d02",
                         },
                       }
                     )
                     .then((response) => {
+
                       if (response.data.resultCode === 0) {
                         props.unfollow(u.id);
                       }
+                      props.toggleFollowingIsProgrese(false)
                     });
                 }}
               >
                 Unfollow
               </button>
             ) : (
-              <button
+              <button disabled={props.followingInProgrese}
                 onClick={() => {
+                  props.toggleFollowingIsProgrese(true)
                   axios
                     .post(
                       `https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
@@ -70,7 +75,7 @@ const Users = (props) => {
                       {
                         withCredentials: true,
                         headers: {
-                          "API-KEY": "",
+                          "API-KEY": "72a4f2e7-5e65-43a1-a356-1ce43d7c4d02",
                         },
                       }
                     )
@@ -78,6 +83,7 @@ const Users = (props) => {
                       if (response.data.resultCode === 0) {
                         props.follow(u.id);
                       }
+                      props.toggleFollowingIsProgrese(false)
                     });
                 }}
               >
